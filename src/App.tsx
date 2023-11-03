@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { ContentBox } from "./components/ContentBox/ContentBox";
 import { Header } from "./components/Header/Header";
 
@@ -5,9 +6,9 @@ function App() {
   return (
     <>
       <Header/>
-      <div className="container">
+      <Box h={"prose"}>
         <ContentBox />
-      </div>
+      </Box>
     </>
   );
 }
