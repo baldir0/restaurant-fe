@@ -1,18 +1,13 @@
-import { Link } from "react-router-dom";
-import { Menu } from "./components/Header/Menu";
+import { MenuBar } from "./components/MenuBar/MenuBar";
 import { ContentBox } from "./components/ContentBox/ContentBox";
+import { Header } from "./components/Header/Header";
 
 function App() {
   return (
     <>
-      <header>
-        <p className="title">Home Page</p>
-        <Link to="/home" className="logo">
-          <strong>Mega</strong>Orders
-        </Link>
-      </header>
+      <Header/>
       <div className="container">
-        <Menu />
+        <MenuBar />
         <ContentBox />
       </div>
     </>

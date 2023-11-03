@@ -1,0 +1,30 @@
+header {
+  background-color: #E39600;
+  color: #FFF;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+header .title {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+header a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+header .logo {
+  position: absolute;
+  right: 15px;
+  font-weight: 300;
+}
+
+header .logo strong {
+  font-weight: 700;
+}

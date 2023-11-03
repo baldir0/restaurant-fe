@@ -1,39 +1,9 @@
-*, body {
+*,
+body {
   padding: 0;
   margin: 0;
   font-family: calibri;
   text-decoration: none;
-}
-
-header {
-  background-color: #E39600;
-  color: #FFF;
-  width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-}
-
-header .title {
-  text-transform: capitalize;
-  font-weight: 700;
-}
-
-header a {
-  text-decoration: none;
-  color: #FFF;
-}
-
-header .logo {
-  position: absolute;
-  right: 15px;
-  font-weight: 300;
-}
-
-header .logo strong {
-  font-weight: 700;
 }
 
 .container {
@@ -43,65 +13,7 @@ header .logo strong {
 }
 
 .container .content {
-  background-color: black;
+  background-color: #FFF;
   width: 100%;
   height: 100%;
-}
-
-.container .menu {
-  width: 15%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5rem;
-  background-color: #ffffff;
-  justify-content: space-between;
-}
-
-.container .menu--top,
-.container .menu--bottom {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 10px;
-  gap: 15px;
-  text-decoration: none;
-  color: #FFF;
-}
-
-.menu--top a,
-.menu--bottom a {
-  color: #E39600;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 5px;
-  transition: .2s;
-}
-
-.menu--top img,
-.menu--bottom img {
-  height: 1.5rem;
-  filter: invert(56%) sepia(80%) saturate(1805%) hue-rotate(9deg) brightness(99%) contrast(101%);
-}
-
-.menu--top a:hover,
-.menu--bottom a:hover {
-  color: #fdc452;
-  padding-left: 5px;
-  transition: .2s;
-}
-
-.menu--top a:hover img {
-  filter: invert(84%) sepia(71%) saturate(700%) hue-rotate(316deg) brightness(101%) contrast(98%);
-}
-
-.menu .active {
-  color: #fdc452;
-  padding-left: 5px;
-  transition: .2s;
-}
-
-.menu .active img{
-  filter: invert(84%) sepia(71%) saturate(700%) hue-rotate(316deg) brightness(101%) contrast(98%);
 }
