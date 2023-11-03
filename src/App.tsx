@@ -1,5 +1,6 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu } from "./components/Header/Menu";
+import { ContentBox } from "./components/ContentBox/ContentBox";
 
 function App() {
   return (
@@ -12,15 +13,7 @@ function App() {
       </header>
       <div className="container">
         <Menu />
-        <div className="content">
-          <Routes>
-            <Route path="/home" />
-            <Route path="/map" />
-            <Route path="/list" />
-            <Route path="/orders" />
-            <Route path="*" />
-          </Routes>
-        </div>
+        <ContentBox />
       </div>
     </>
   );
