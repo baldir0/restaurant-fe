@@ -1,10 +1,11 @@
+import { Box } from "@chakra-ui/react";
 import { MenuBarElement } from "../MenuBarElement/MenuBarElement";
 
 import './MenuBarTop.css';
 
-export const MenuBarTop = () => {
+export const MenuNavigation = () => {
   return (
-    <div className="menu__top">
+    <Box className="menu__top">
       <MenuBarElement path="/home" iconSrc="/icons/home.icon.svg" text="Home" />
       <MenuBarElement path="/map" iconSrc="/icons/map.icon.svg" text="Map" />
       <MenuBarElement path="/list" iconSrc="/icons/list.icon.svg" text="List" />
@@ -13,6 +14,6 @@ export const MenuBarTop = () => {
         iconSrc="/icons/shoppingCart.icon.svg"
         text="My Orders"
       />
-    </div>
+    </Box>
   );
 };
