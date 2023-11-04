@@ -1,3 +1,5 @@
+import { RestaurantMap } from "../components/RestaurantMap/RestaurantMap"
+
 export const MapView = () => {
-    return <div>MAP</div>
+    return <RestaurantMap />
 }
