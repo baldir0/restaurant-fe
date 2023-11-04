@@ -3,14 +3,14 @@ import { MapContainer, TileLayer } from "react-leaflet";
 
 import { Box } from "@chakra-ui/react";
 import { MapLogic } from "./MapLogic";
-import { GetLocationButton } from "./GetLocation";
+import { GetLocationController } from "../MapControlers/GetLocation.controler";
 
 export const RestaurantMap = () => {
   return (
     <Box as="div" height={"calc(100vh - 60px)"}>
       <MapContainer
         center={[51.2519214, 18.8549883, 6.92]}
-        zoom={6}
+        zoom={10}
         scrollWheelZoom={true}
         style={{
           height: "100%",
@@ -21,7 +21,7 @@ export const RestaurantMap = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <MapLogic />
-        <GetLocationButton />
+        <GetLocationController />
       </MapContainer>
     </Box>
   );

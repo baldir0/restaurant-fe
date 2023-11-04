@@ -5,6 +5,7 @@ export const getCurrentLocation = async (successHandler: PositionCallback, error
   if (state !== "granted") throw new Error('Failed to get location!');
   navigator.geolocation.getCurrentPosition(successHandler, errorHandler, {
     enableHighAccuracy: true,
+    timeout: 0,
   })
 }
 

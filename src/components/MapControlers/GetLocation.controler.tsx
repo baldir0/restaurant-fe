@@ -2,7 +2,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import { IconButton } from "@chakra-ui/react";
 import { useMap } from "react-leaflet";
 
-export const GetLocationButton = () => {
+export const GetLocationController = () => {
   const parentMap = useMap();
 
   return (
