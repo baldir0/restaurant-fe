@@ -1,6 +1,6 @@
 import L from "leaflet";
 
-import iconUrl from '/src/assets/markers/user_marker.png'
+import iconUrl from '/src/assets/markers/current_location.icon.png'
 
 export const userMarkerIcon = new L.Icon({
     iconUrl: iconUrl,
