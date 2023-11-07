@@ -1,8 +1,8 @@
 import { Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay } from "@chakra-ui/react";
 
 import "./MenuBar.css";
-import { MenuNavigation } from "../MenuNavigation/MenuNavigation";
-import { MenuBarBottom } from "../MenuBarBottom/MenuBarBottom";
+import { MenuNavigation } from "./MenuNavigation/MenuNavigation";
+import { MenuBarBottom } from "./MenuBarBottom/MenuBarBottom";
 
 interface Props {
   isOpen: boolean;

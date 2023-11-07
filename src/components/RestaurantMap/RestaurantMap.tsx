@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 
 import { Box } from "@chakra-ui/react";
 import { MapLogic } from "./MapLogic";
-import { GetLocationController } from "../MapControlers/GetLocation.controler";
+import { GetLocationController } from "./MapControlers/GetLocation.controler";
 
 export const RestaurantMap = () => {
   return (

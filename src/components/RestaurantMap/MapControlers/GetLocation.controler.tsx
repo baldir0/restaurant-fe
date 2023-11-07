@@ -11,7 +11,6 @@ export const GetLocationController = () => {
       aria-label="Current-Location"
       onClick={() => {
         parentMap.locate();
-        console.log("Localizing...");
       }}
       bottom={0}
       left={0}
