@@ -1,3 +1,5 @@
+import { RestaurantList } from "../components/RestaurantList/RestaurantList"
+
 export const ListView = () => {
-    return <div>List View</div>
+    return <RestaurantList/>
 }
