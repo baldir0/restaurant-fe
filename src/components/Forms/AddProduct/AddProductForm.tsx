@@ -28,7 +28,7 @@ export const AddProductForm = ({ onSubmit }: MyFormProps<AddProductFields>) => {
     validate: validateAddProductForm,
   });
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} encType="multipart/form-data">
       {/** NAME INPUT FIELD*/}
       <FormControl
         isInvalid={!!formik.errors.name && formik.touched.name}

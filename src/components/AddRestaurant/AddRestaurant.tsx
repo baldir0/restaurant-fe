@@ -22,7 +22,6 @@ export const AddRestaurant = () => {
       formData.append('image', file);
     }
     
-
     await fetch('http://localhost:3001/restaurant', {
       method: "POST",
       body: formData
