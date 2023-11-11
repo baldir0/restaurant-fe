@@ -1,10 +1,10 @@
 import { ContentBox } from "./components/ContentBox/ContentBox";
-import { Header } from "./components/Header/Header";
+import { AppHeader } from "./components/AppHeader/AppHeader";
 
 function App() {
   return (
     <>
-      <Header/>
+      <AppHeader />
       <ContentBox />
     </>
   );

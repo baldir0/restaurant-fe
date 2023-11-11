@@ -5,7 +5,8 @@ interface Props {
   alt?: string;
 }
 
-export const ListElementImage = (props: Props) => {
+
+export const ListItemImage = (props: Props) => {
   return (
     <Image
       src={props.src}

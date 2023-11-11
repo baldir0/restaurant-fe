@@ -1,3 +1,3 @@
 export const OrdersView = () => {
-    return <div>Orders</div>
+    return <div>Soon TM</div>
 }

@@ -1,14 +1,12 @@
-export const getCurrentLocation = async (successHandler: PositionCallback, errorHandler: PositionErrorCallback = localErrorHandler) : Promise<void> => {
-  if (!navigator.geolocation) throw new Error('Geolocation is not supported by this browser!');
-
-  const { state } : PermissionStatus = await navigator.permissions.query({name: "geolocation"});
-  if (state !== "granted") throw new Error('Failed to get location!');
-  navigator.geolocation.getCurrentPosition(successHandler, errorHandler, {
-    enableHighAccuracy: true,
-    timeout: 0,
-  })
-}
-
-const localErrorHandler = () => {
-  console.log("An Error Occured")
-}
+export const getLocation = async (
+  address: string
+): Promise<{ lat : number; lon: number }> => {
+  const response = await fetch(
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
+      address
+    )}&format=json`
+  );
+  const data = await response.json();
+  const { lat, lon } = data[0];
+  return {lat: parseFloat(lat), lon: parseFloat(lon)}
+};

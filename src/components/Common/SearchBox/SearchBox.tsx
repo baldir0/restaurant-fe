@@ -1,11 +1,13 @@
 import { SearchIcon } from "@chakra-ui/icons";
-import { Input, FormControl, IconButton } from "@chakra-ui/react";
+import { Input, FormControl, IconButton, background } from "@chakra-ui/react";
 import { ChangeEvent, SyntheticEvent } from "react";
 
 interface Props {
   searchString: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  placeholder? : string;
+  background?: string;
   w: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (event: SyntheticEvent) => void;
 }
 
@@ -27,6 +29,9 @@ export const SearchBox = (props: Props) => {
         colorScheme="orange"
         onChange={props.onChange}
         value={props.searchString}
+        zIndex={1000}
+        background={props.background}
+        placeholder={props.placeholder}
       />
       <IconButton
         icon={<SearchIcon />}

@@ -1,24 +1,32 @@
-import { SearchIcon } from "@chakra-ui/icons";
+import { ViewIcon } from "@chakra-ui/icons";
 import { IconButton } from "@chakra-ui/react";
+import { LatLngExpression } from "leaflet";
+import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 
-export const GetLocationController = () => {
+interface Props {
+  position: LatLngExpression;
+}
+
+export const GetLocationController = ({ position }: Props) => {
   const parentMap = useMap();
+
+  useEffect(() => {
+    parentMap.locate({ enableHighAccuracy: true });
+  }, []);
+
+  useEffect(() => {
+    parentMap.flyTo(position);
+  }, [position]);
 
   return (
     <IconButton
       colorScheme="orange"
       aria-label="Current-Location"
       onClick={() => {
-        parentMap.locate();
+        parentMap.locate({ enableHighAccuracy: true });
       }}
-      bottom={0}
-      left={0}
-      position={"absolute"}
-      margin={"5px"}
-      zIndex={1000}
-      icon={<SearchIcon />
-    }
+      icon={<ViewIcon />}
     ></IconButton>
   );
 };

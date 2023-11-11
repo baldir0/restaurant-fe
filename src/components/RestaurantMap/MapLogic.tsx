@@ -1,18 +1,19 @@
 import { LatLngExpression } from "leaflet";
-import { useState } from "react";
 import { Marker, useMapEvents } from "react-leaflet";
 import { userMarkerIcon } from "./CustomIcons/UserMarkerIcon";
 
-export const MapLogic = () => {
-  const [position, setPosition] = useState<LatLngExpression>([
-    51.2519214, 18.8549883, 6.92
-  ]);
+interface Props {
+  position: LatLngExpression,
+  setPosition: (val: LatLngExpression) => void;
+}
+
+export const MapLogic = (props : Props) : JSX.Element => {
   const map = useMapEvents({
     locationfound(location) {
       map.flyTo(location.latlng, map.getZoom());
-      setPosition(location.latlng);
+      props.setPosition(location.latlng);
     },
   });
 
-  return (<Marker position={position} icon={userMarkerIcon}/>)
+  return (<Marker position={props.position} icon={userMarkerIcon}/>)
 };

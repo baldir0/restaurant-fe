@@ -1,13 +1,7 @@
-import {
-  Button,
-  Container,
-  Divider,
-  Flex,
-  Text,
-} from "@chakra-ui/react";
-import "./Home.css";
+import { Container, Divider, Flex, Text } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
+import { ExtraLargeText } from "../Common/Text/ExtraLargeText";
+import { LinkButton } from "../Common/Buttons/LinkButton";
 
 export const Home = () => {
   return (
@@ -20,20 +14,13 @@ export const Home = () => {
         maxWidth={"60rem"}
         p={"1rem"}
       >
-        <Text
-          as={"p"}
-          fontSize={"3rem"}
-          maxWidth={"60rem"}
-          textAlign={"center"}
-          color={"grey.800"}
-          fontWeight={800}
-        >
+        <ExtraLargeText>
           ORDER FOOD FROM VARIOUS PLACES EASY WITH{" "}
           <Text as="span" color={"orange.400"} fontWeight={"bold"}>
             MEGA
           </Text>
           ORDERS!
-        </Text>
+        </ExtraLargeText>
         <Text color={"gray.400"} fontSize={"1.25rem"}>
           <Text as="span" color={"orange.400"} fontWeight={"bold"}>
             MEGA
@@ -41,17 +28,10 @@ export const Home = () => {
           Orders is place where you can find restuarants in your local, rate
           them and order food easily.
         </Text>
-        <Divider />
-        <Link to="/map">
-          <Button
-            colorScheme="orange"
-            rightIcon={<ArrowRightIcon />}
-            size={"lg"}
-            m={"5px"}
-          >
-            Get Started!
-          </Button>
-        </Link>
+        <Divider marginBottom={"1rem"}/>
+        <LinkButton to="/map" >
+          GetStarted<ArrowRightIcon paddingLeft={".4rem"}/>
+        </LinkButton>
       </Container>
     </Flex>
   );
