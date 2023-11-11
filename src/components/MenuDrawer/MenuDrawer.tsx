@@ -1,8 +1,14 @@
-import { Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay } from "@chakra-ui/react";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+} from "@chakra-ui/react";
 
-import "./MenuBar.css";
 import { MenuNavigation } from "./MenuNavigation/MenuNavigation";
 import { MenuBarBottom } from "./MenuBarBottom/MenuBarBottom";
+import { Header } from "../Common/ElementHeader/Header";
 
 interface Props {
   isOpen: boolean;
@@ -10,13 +16,12 @@ interface Props {
 }
 
 export const MenuDrawer = ({ isOpen, onClose }: Props) => {
-
   return (
     <>
       <Drawer isOpen={isOpen} onClose={onClose} placement="left">
         <DrawerOverlay />
         <DrawerContent justifyContent={"space-between"}>
-          <DrawerHeader>
+          <DrawerHeader as={Header}>
             Menu
           </DrawerHeader>
           <DrawerBody>

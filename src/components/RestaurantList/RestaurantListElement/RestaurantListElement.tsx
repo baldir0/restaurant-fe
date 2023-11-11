@@ -1,74 +1,56 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  List,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Divider, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { RateForm } from "../../RatingComponent/RateForm";
-import { ListElementImage } from "../../Common/ListElements/ListElementImage";
+import { TextBig } from "../../Common/Text/TextBig";
+import { TextMedium } from "../../Common/Text/TextMedium";
+import { HoverListItem } from "../../Common/List/LargeListItem";
+import { ListItemImage } from "../../Common/List/ListItemImage";
+import { SmallList } from "../../Common/List/SmallList";
+import { RestaurantEntity } from "@types";
 
 interface Props {
-  targetId: string;
-  src: string;
-  alt?: string;
+  data: RestaurantEntity;
+  img: Buffer;
 }
 
-export const RestaurantListElement = (props: Props) => {
+
+
+export const RestaurantListItem = (props: Props) => {
+  const base64String = btoa(String.fromCharCode(...new Uint8Array(props.img)));
+  console.log(base64String)
   return (
-    <ListItem
-      transition=".2s"
-      padding={"5px"}
-      borderRadius="1rem"
-      display={"flex"}
-      gap={"1rem"}
-      _hover={{
-        outline: "1px solid",
-        outlineColor: "orange.300",
-        transition: ".2s",
-      }}
-    >
+    <HoverListItem>
       <Flex
         as={Link}
-        to={`/restaurants/${props.targetId}`}
+        to={`/restaurant/${props.data.id}`}
         flexGrow={1}
         gap={".5rem"}
       >
-        <ListElementImage src={props.src} alt={props.alt} />
+        <ListItemImage src={`data:image/png;base64, ${props.img}`} alt={props.data.name} />
         <Flex direction={"column"} flexGrow={1} p={"5px"}>
-          <Text as="p" fontSize={"2.25rem"} color={"gray.800"}>
-            Title
-          </Text>
+          <TextBig>{props.data.name}</TextBig>
           <Divider />
-          <Text as="p" fontSize={"1rem"} color={"gray.600"}>
-            Description
-          </Text>
+          <TextMedium>{props.data.description}</TextMedium>
         </Flex>
         <Box alignSelf={"center"}>
-          <Text as="p" fontSize={"1rem"}>
-            Milcz, ul. Konfartego 42
-          </Text>
+          <TextMedium>{props.data.address}</TextMedium>
         </Box>
         <Box alignSelf={"center"}>
           <Flex direction={"column"}>
-            <Text as="p" fontSize={"1rem"}>
-              Open:{" "}
-            </Text>
-            <List>
-              <ListItem>Mon. 08:00 - 17:00</ListItem>
-              <ListItem>Tue. 08:00 - 17:00</ListItem>
-              <ListItem>Wed. 08:00 - 17:00</ListItem>
-              <ListItem>Thu. 08:00 - 17:00</ListItem>
-              <ListItem>Fri. 08:00 - 17:00</ListItem>
-            </List>
+            <TextMedium>Open:</TextMedium>
+            <SmallList>
+              <TextMedium>
+                {/* {Object.entries(data).map(([key, value]:[string, OpenHoursTime]) => {
+                  return <SmallListItem>{key} {value.from} - {value.to}</SmallListItem>
+                })} */}
+              </TextMedium>
+            </SmallList>
           </Flex>
         </Box>
       </Flex>
       <Box alignSelf={"center"} flexGrow={0} p={"15px"}>
-        <RateForm targetId="" baseRate={2.52} />
+        <RateForm targetId="" baseRate={props.data.rating} />
       </Box>
-    </ListItem>
+    </HoverListItem>
   );
 };

@@ -1,5 +1,4 @@
 import { StarIcon } from "@chakra-ui/icons";
-import { useCallback, useMemo } from "react";
 
 interface Props {
   active?: boolean;

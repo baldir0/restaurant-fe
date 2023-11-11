@@ -1,8 +1,0 @@
-.menu__top {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 10px;
-  gap: 15px;
-  text-decoration: none;
-  color: #e39600;
-}
